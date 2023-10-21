@@ -1,4 +1,4 @@
-# Python-Libraries
+# Developed Python Libraries
 I developed this Python library script to assist students in determining the suitable machine learning model (regression or classification) to use based on the dataset target variable and help treat outliers in a dataset. Run the ‘handling_outliers.py’ to handle outliers in a dataset or the ‘choosing_model.py’ to suggest a suitable model (regression or classification). <br><br>
 
 Note: Always include the ‘JUStat.py’ script and dataset in the same folder.
