@@ -6,6 +6,7 @@ def treat_outliers(df, columns):
         total_outliers = []
         percentage = []
         least_outlier = []
+        outliers_dict = {}
 
         # loop through all column list
         for column in columns:
@@ -43,6 +44,7 @@ def treat_outliers(df, columns):
             total_outliers.append(len(outliers.values))
             least_outlier.append(min_value)
             percentage.append(f'{percentage_value}%')
+            outliers_dict.update({column:outliers})
 
             # do this if outliers is less than or equal to 5%
             if round(percentage_value) <= 5 and len(outliers.values) > 0:
@@ -61,7 +63,7 @@ def treat_outliers(df, columns):
                       'Percentage Value': percentage}
 
         # return the table dictionary
-        return table_dict, df[columns]
+        return table_dict, df[columns], outliers_dict
 
     except BaseException as error:
         print('\nPlease ensure the dataframe name is correct and the target column is entered correctly: {}'.format(error))
