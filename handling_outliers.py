@@ -25,7 +25,12 @@ def clean_outliers(df, predictor_variables):
     # Treating Outliers Routine
     ############################
     # treating outliers
-    table_dict, treated_outlier_data = js.treat_outliers(df, predictor_variables)
+    table_dict, treated_outlier_data, outliers_dict = js.treat_outliers(df, predictor_variables)
+    
+    # Print found outliers
+    for key, values in outliers_dict.items():
+        print(f'Column: {key}')
+        print(f'Outlier list for {key}: {list(values)}\n')
 
     treated_outlier_data.to_csv('Cleaned_Data.csv')
     ########################
